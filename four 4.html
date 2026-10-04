@@ -1,0 +1,31 @@
+
+<html>
+<body style="font-family:Arial; text-align:center; background:gray;">
+<h1>TEST OF GUJARAT</h1>
+<form onsubmit="return sendOrder(event)">
+<label><input type="checkbox" class="item" value="Khandvi - Rs.99"> <b>Khandvi - Rs.99</b><br><img src ="C:\Users\priya\Desktop\my web\khandavi.jpg" width="200" height="150"></label><br><br>
+<label><input type="checkbox" class="item" value="Dhokla - Rs.99"> <b>Dhokla - Rs.99</b><br><img src="C:\Users\priya\Desktop\my web\d.jpg" width="200" height="150"></label><br><br>
+<label><input type="checkbox" class="item" value="Jalebi - Rs.99"> <b>Jalebi - Rs.99</b><br><img src="C:\Users\priya\Desktop\my web\j.jpg" width="200" height="150"></label><br><br>
+<label><input type="checkbox" class="item" value="Fafda - Rs.129"> <b>Fafda - Rs.129</b><br><img src="C:\Users\priya\Desktop\my web\f.jpg" width="200" height="150"></label><br><br>
+<label><input type="checkbox" class="item" value="Thepla - Rs.149"> <b>Thepla - Rs.149</b><br><img src="C:\Users\priya\Desktop\my web\th.jpg" width="200" height="150"></label><br><br>
+<a href="page 0.html" style="background:#000; color:#fff; padding:12px 30px; text-decoration:none;">next</a>
+
+<input type="submit" value="Order Confirm" style="background:green; color:white; padding:12px 30px; border:none; font-size:16px; cursor:pointer;">
+</form>
+
+<script>
+function sendOrder(e){
+e.preventDefault();
+let items = [];
+document.querySelectorAll('.item:checked').forEach(i => items.push(i.value));
+if(items.length==0){ alert("Pehle koi item select karo!"); return false; }
+if(!confirm("Order confirm karna hai?")) return false;
+let email = "priyansi1704@email.com"; // yaha apna email likho
+window.location.href = "mailto:"+email+"?subject=New Order&body="+items.join("%0D%0A");
+alert("Thank You! Order ho gaya.");
+return false;
+}
+</script>
+
+</body>
+</html>

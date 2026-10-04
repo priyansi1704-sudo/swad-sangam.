@@ -1,0 +1,31 @@
+<html>
+<body style="font-family:Arial; text-align:center; background:gray;">
+
+<h1>SOUTH INDIAN</h1>
+<form onsubmit="return sendOrder(event)">
+<label><input type="checkbox" class="item" value="Masala Dosa - Rs.99"> <b>Masala Dosa - Rs.99</b><br><img src="C:\Users\priya\desktop\my web\dosa.jpg" width="200" height="150"></label><br><br>
+<label><input type="checkbox" class="item" value="Idli Sambar - Rs.79"> <b>Idli Sambar - Rs.79</b><br><img src="C:\Users\priya\desktop\my web\idli.jpg"width="200" height="150"></label><br><br>
+<label><input type="checkbox" class="item" value="Mendu Vada - Rs.89"> <b>Mendu Vada - Rs.89</b><br><img src="C:\Users\priya\desktop\my web\medu.jpg" width="200" height="150"></label><br><br>
+<label><input type="checkbox" class="item" value="Uttapam - Rs.109"> <b>Uttapam - Rs.109</b><br><img src="C:\Users\priya\desktop\my web\uttpam.jpg" width="200" height="150"></label><br><br>
+<label><input type="checkbox" class="item" value="Filter Coffee - Rs.49"> <b>Filter Coffee - Rs.49</b><br><img src="C:\Users\priya\desktop\my web\f coffie.jpg" width="200" height="150"></label><br><br>
+<a href="page 0.html" style="background:#000; color:#fff; padding:12px 30px; text-decoration:none;">next</a>
+
+<input type="submit" value="Order Confirm" style="background:green; color:white; padding:12px 30px; border:none; font-size:16px; cursor:pointer;">
+</form>
+
+<script>
+function sendOrder(e){
+e.preventDefault();
+let items = [];
+document.querySelectorAll('.item:checked').forEach(i => items.push(i.value));
+if(items.length==0){ alert("Pehle koi item select karo!"); return false; }
+if(!confirm("Order confirm karna hai?")) return false;
+let email = "priyansi1704@email.com"; // yaha apna email likho
+window.location.href = "mailto:"+email+"?subject=New Order - South Indian&body="+items.join("%0D%0A");
+alert("Thank You! Order ho gaya.");
+return false;
+}
+</script>
+
+</body>
+</html>

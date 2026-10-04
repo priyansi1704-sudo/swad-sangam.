@@ -1,0 +1,35 @@
+
+<html>
+<body style="font-family:Arial; text-align:center; background:gray;">
+
+<h1>FAST FOOD</h1>
+<form onsubmit="return sendOrder(event)">
+<label><input type="checkbox" class="item" value="Burger - Rs.99"> <b>Burger - Rs.99</b><br><img src="C:\Users\priya\Desktop\my web\bu.jpg"width="200" height="150"></label><br><br>
+<label><input type="checkbox" class="item" value="Pizza - Rs.199"> <b>Pizza - Rs.199</b><br><img src= "C:\Users\priya\Desktop\my web\pizz.jpg"width="200" height="150"></label><br><br>
+<label><input type="checkbox" class="item" value="French Fries - Rs.79"> <b>French Fries - Rs.79</b><br><img src="C:\Users\priya\Desktop\my web\fran.jpg" width="200" height="150"></label><br><br>
+<label><input type="checkbox" class="item" value="Sandwich - Rs.89"> <b>Sandwich - Rs.89</b><br><img src="C:\Users\priya\Desktop\my web\sandw.jpg" width="200" height="150"></label><br><br>
+<label><input type="checkbox" class="item" value="Momos - Rs.99"> <b>Momos - Rs.99</b><br><img src="C:\Users\priya\Desktop\my web\momo.jpg" width="200" height="150"></label><br><br>
+<label><input type="checkbox" class="item" value="Cold Coffee - Rs.69"> <b>Cold Coffee - Rs.69</b><br><img src="C:\Users\priya\Desktop\my web\coff.jpg" width="200" height="150"></label><br><br>
+
+
+<a href="page 0.html" style="background:#000; color:#fff; padding:12px 30px; text-decoration:none;">next</a>
+
+<input type="submit" value="Order Confirm" style="background:green; color:white; padding:12px 30px; border:none; font-size:16px; cursor:pointer;">
+</form>
+
+<script>
+function sendOrder(e){
+e.preventDefault();
+let items = [];
+document.querySelectorAll('.item:checked').forEach(i => items.push(i.value));
+if(items.length==0){ alert("Pehle koi item select karo!"); return false; }
+if(!confirm("Order confirm karna hai?")) return false;
+let email = "priyansi1704@email.com"; // yaha apna email likho
+window.location.href = "mailto:"+email+"?subject=New Order&body="+items.join("%0D%0A");
+alert("Thank You! Order ho gaya.");
+return false;
+}
+</script>
+
+</body>
+</html>
